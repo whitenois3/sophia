@@ -14,7 +14,7 @@ CC := g++
 all: copy secrets
 
 copy:
-	mkdir -r $(BUILD_TARGET)
+	mkdir -p $(BUILD_TARGET)
 	$(CP) -R badusb $(BUILD_TARGET)
 	ls -l $(BUILD_TARGET)
 
