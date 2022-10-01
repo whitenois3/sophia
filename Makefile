@@ -15,7 +15,7 @@ all: copy secrets
 
 copy:
 	mkdir -p $(BUILD_TARGET)
-	$(CP) -R badusb $(BUILD_TARGET)
+	$(CP) -R badusb/* $(BUILD_TARGET)
 	ls -l $(BUILD_TARGET)
 
 secrets:
