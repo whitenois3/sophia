@@ -13,6 +13,11 @@ CC := g++
 
 all: copy secrets
 
+ubuntu: copy usecrets
+
+usecrets:
+	find $(BUILD_TARGET) -type f -name "*.launch" -exec sed -i 's/DROPBOX_BEARER_TOKEN/${DROPBOX_BEARER_TOKEN}/g' {} \;
+
 copy:
 	mkdir -p $(BUILD_TARGET)
 	$(CP) -R badusb/* $(BUILD_TARGET)

@@ -10,6 +10,6 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build
-        run: make
+        run: make ubuntu
         env:
           DROPBOX_BEARER_TOKEN: EXAMPLE_DROPBOX_BEARER_TOKEN
