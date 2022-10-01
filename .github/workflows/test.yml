@@ -1,0 +1,15 @@
+name: ci
+
+on: [push]
+
+jobs:
+  tests:
+    name: Make
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build
+        run: make
+        env:
+          DROPBOX_BEARER_TOKEN: EXAMPLE_DROPBOX_BEARER_TOKEN
