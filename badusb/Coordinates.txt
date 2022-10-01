@@ -1,0 +1,33 @@
+REM Title: Coordinates
+REM Author: sophia
+REM License: MIT
+REM Description: Get the coordinates of the user's current location
+REM Target:	macOS 11.0+
+REM
+
+DEFAULTDELAY 100
+
+GUI SPACE
+STRING terminal
+ENTER
+DELAY 1500
+
+REM Download the WhereAmI zipped binary
+STRING curl -LO https://github.com/robmathers/WhereAmI/releases/download/v1.02/whereami-1.02.zip
+ENTER
+DELAY 1000
+
+REM Unzip the download
+STRING unzip -o whereami-1.02.zip
+ENTER
+DELAY 1000
+
+REM Get the coordinates
+STRING ./whereami
+ENTER
+DELAY 4000
+
+REM Close terminal
+STRING osascript -e 'tell application "Terminal" to close first window' & exit
+ENTER
+ENTER

@@ -1,0 +1,31 @@
+REM Title: Signature
+REM Author: sophia
+REM License: MIT
+REM Description: Prints the sophia signature
+REM Target:	macOS 11.0+
+REM
+
+DEFAULTDELAY 100
+
+REM Open terminal
+GUI SPACE
+STRING terminal
+ENTER
+DELAY 1000
+
+REM Print the Signature
+DEFAULTDELAY 100
+STRING printf '\e[8;60;130t'
+ENTER
+DEFAULTDELAY 30
+STRING clear && echo "
+STRING                       _     _             \n
+STRING                      | |   (_)            \n
+STRING       ___  ___  _ __ | |__  _  __ _       \n
+STRING      / __|/ _ \| '_ \| '_ \| |/ _  |      \n
+STRING      \__ \ (_) | |_) | | | | | (_| |      \n
+STRING      |___/\___/| .__/|_| |_|_|\__,_|      \n
+STRING                | |                        \n
+STRING                |_|                        \n
+STRING "
+ENTER

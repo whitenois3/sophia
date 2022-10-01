@@ -1,0 +1,33 @@
+REM Title: Ip Address
+REM Author: sophia
+REM License: MIT
+REM Description: Get the private and public ip address of the user
+REM Target:	macOS 11.0+
+REM
+
+DEFAULTDELAY 100
+
+GUI SPACE
+STRING terminal
+ENTER
+DELAY 1500
+
+REM Get the private ip address
+STRING ipconfig getifaddr en0
+ENTER
+DELAY 500
+
+REM Get the public router ip address
+STRING dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com
+ENTER
+DELAY 500
+
+REM Get the username
+STRING whoami
+ENTER
+DELAY 500
+
+REM Close terminal
+STRING osascript -e 'tell application "Terminal" to close first window' & exit
+ENTER
+ENTER

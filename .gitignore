@@ -1,6 +1,12 @@
 # Prerequisites
 *.d
 
+.env
+.env.prod
+.env.local
+
+out
+
 # Object files
 *.o
 *.ko

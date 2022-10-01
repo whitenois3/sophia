@@ -1,0 +1,32 @@
+REM Title: Coordinates
+REM Author: sophia
+REM License: MIT
+REM Description: Get the coordinates of the user's current location
+REM Target:	macOS 11.0+
+REM
+
+DEFAULTDELAY 500
+
+REM Open Safari
+GUI SPACE
+STRING safari
+ENTER
+DELAY 500
+
+REM Do stuff in browser here
+
+REM Open terminal
+GUI SPACE
+STRING terminal
+ENTER
+DELAY 1000
+
+REM Close Safari
+STRING osascript -e 'tell application "Safari" to close first window' & exit
+ENTER
+ENTER
+
+REM Close Terminal
+STRING osascript -e 'tell application "Terminal" to close first window' & exit
+ENTER
+ENTER
