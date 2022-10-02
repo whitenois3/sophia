@@ -39,4 +39,5 @@ Creators of and contributors to the Sophia codebase, or in any other facilities,
 
 ### Resources
 
+- [Supported Ducky Bad USB Script Commands](https://github.com/flipperdevices/flipperzero-firmware/blob/dev/applications/main/bad_usb/bad_usb_script.c)
 - [Flipper Zero Hello World Tutorial](https://github.com/DroomOne/Flipper-Plugin-Tutorial)
